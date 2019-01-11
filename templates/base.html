@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+    <title>Home</title>
+</head>
+
+<header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Job register</a></li>
+            <li><a href="#">Find a job</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Teste</a></li>
+
+        </ul>     
+    </nav>
+ </header>
+ {% block content %}{% endblock %}
