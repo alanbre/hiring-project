@@ -284,6 +284,10 @@ $RECYCLE.BIN/
 *.lnk
 
 .idea
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # End of https://www.gitignore.io/api/python,django,windows,pycharm
