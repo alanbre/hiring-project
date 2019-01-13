@@ -97,7 +97,7 @@ img {
 .thumbnail img {
   height: 135px;
   opacity: .25;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .card-content {
@@ -132,4 +132,12 @@ img {
 
 .comments {
   margin-left: .5rem;
+}
+
+.category_1 {
+    background-color: #d63031;
+}
+
+.category_2 {
+    background-color: #fdcb6e;
 }
