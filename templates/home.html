@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-<body>
-
-</body>
+{% load staticfiles %}
+  <body>
+    <section class="cards">
+      <article class="card">
+        <picture class="thumbnail">
+          <img class="category__01" src="{% static 'engineering.svg' %}" alt="" />
+        </picture>
+        <div class="card-content">
+          <p class="category category__01">Computer Engineering</p>
+          <h2>Internship</h2>
+          <p>
+            Excellent software engineering skills in:. As a Software Engineer Intern you will leverage your software engineering skills to design, develop and deploy these...</p>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
 {% endblock %}
 
-</html>
