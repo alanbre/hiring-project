@@ -20,6 +20,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home),
+    path('admin/', admin.site.urls),
+    path('dashboard/', views.dashboard),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
