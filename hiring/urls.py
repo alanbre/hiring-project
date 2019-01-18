@@ -6,7 +6,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('admin/', admin.site.urls),
     path('login/', views.login, name='login'),
     path('accounts/', include('accounts.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

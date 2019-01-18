@@ -5,7 +5,7 @@
     <html lang="en">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>{% block title %}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -24,7 +24,25 @@
                 <li class="active"><a class="nav-item nav-link" href="#"> Shop </a></li>
                 <li class="active"><a class="nav-item nav-link" href="#"> About Us </a></li>
                 <li class="active"><a class="nav-item nav-link" href="#"> Lookbook </a></li>
+                {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">Sign Out</a>
+                        <form id="logout" method="POST" action="{% url 'signout' %}">
+                            {% csrf_token %}
+                            <input type="hidden" />
+                        </form>
+                    </div>
+                </div>
+                {% else %}
                 <li class="active"><a class="nav-item nav-link" href="{% url 'signin' %}"> Sign in / Sing up </a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>

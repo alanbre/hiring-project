@@ -2,10 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'new_home.html')
-
-def dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'home.html')
 
 def login(request):
     return render(request, 'login.html')
