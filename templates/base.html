@@ -1,20 +1,41 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      {% load staticfiles %}
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-      <title>Home</title>
-  </head>
-  <header>
-    <nav class="navbar">
-        <ul class="b"> 
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Job register</a></li>
-            <li><a href="#">Find a job</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="dashboard">Teste</a></li>
-        </ul>
+<html>
+<head> 
+    <html lang="en">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainnav">
+        <a class="navbar navbar-brand" href="/"> HIRING </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+
+                <li class="active"><a class="nav-item nav-link" href="#"> Shop </a></li>
+                <li class="active"><a class="nav-item nav-link" href="#"> About Us </a></li>
+                <li class="active"><a class="nav-item nav-link" href="#"> Lookbook </a></li>
+                <li class="active"><a class="nav-item nav-link" href="login"> Sign in / Sing up </a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
+{% block content %}
+{% endblock %}
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</html>
