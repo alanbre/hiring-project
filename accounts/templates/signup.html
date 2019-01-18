@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+    <div class="row justify-content-md-center">
+        <div class="col-md-6 my-col">
+            <h2>Sign up </h2>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email or password with anyone
+                        else.</small>
+            <form method="POST" action="{% url 'signup'%}">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email" type="email" required="required" maxlength="80" name='email'>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                        required="required" maxlength="30" minlength="8" name="password1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password"
+                        required="required" maxlength="30" minlength="8" name="password2">
+                </div>
+                </br>
+                {% if error %}
+                <span class="signup-error">{{ error }}</span>
+                <br />
+                <br />
+                {% endif %}
+                <button type="submit" class="btn btn-success">Register</button>
+                <a href='{% url 'home' %}'><button type="button" class="btn btn-danger">Cancel</button></a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
