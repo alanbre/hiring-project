@@ -30,4 +30,6 @@ def signin(request):
         return render(request, 'signin.html')
 
 def signout(request):
-    return render(request, 'signout.html')
+    if request.method == "POST":
+        auth.logout(request)
+        return redirect('home')
